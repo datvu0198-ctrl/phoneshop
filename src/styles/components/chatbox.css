@@ -1,0 +1,321 @@
+/* ===== CHAT BUTTON ===== */
+.chat-toggle{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:26px;
+  cursor:pointer;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(56,189,248,0.5);
+  transition:0.3s;
+}
+
+.chat-toggle:hover{
+  transform:scale(1.1);
+}
+
+/* ===== CHATBOX ===== */
+.chatbox{
+  position:fixed;
+  bottom:env(safe-area-inset-bottom, 20px);
+  right:25px;
+  margin-bottom:90px; /* cách footer */
+  width:360px;
+  height:520px;
+  z-index:9999;
+  background:rgba(15,23,42,0.85);
+  backdrop-filter: blur(20px);
+
+  border-radius:22px;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+
+  animation:fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== HEADER ===== */
+.chat-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:12px 15px;
+
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  color:white;
+  font-weight:600;
+}
+
+/* nút đóng */
+.chat-close{
+  cursor:pointer;
+  font-size:18px;
+  transition:0.2s;
+}
+
+.chat-close:hover{
+  transform:scale(1.2);
+}
+
+/* ===== BODY ===== */
+.chat-body{
+  flex:1;
+  padding:12px;
+  overflow-y:auto;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* scroll đẹp */
+.chat-body::-webkit-scrollbar{
+  width:5px;
+}
+.chat-body::-webkit-scrollbar-thumb{
+  background:#38bdf8;
+  border-radius:10px;
+}
+
+/* ===== MESSAGE ===== */
+.msg{
+  padding:10px 14px;
+  border-radius:16px;
+  max-width:75%;
+  font-size:14px;
+  line-height:1.4;
+  animation:msgFade 0.25s ease;
+}
+
+.msg.bot{
+  background:rgba(255,255,255,0.08);
+  color:#e2e8f0;
+  align-self:flex-start;
+}
+
+.msg.user{
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  color:white;
+  align-self:flex-end;
+  box-shadow:0 5px 15px rgba(56,189,248,0.4);
+}
+
+@keyframes msgFade{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== INPUT ===== */
+.chat-input{
+  display:flex;
+  gap:8px;
+  padding:10px;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+/* input */
+.chat-input input{
+  flex:1;
+  padding:10px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+
+/* button */
+.chat-input button{
+  padding:10px 14px;
+  border:none;
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  color:white;
+
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.chat-input button:hover{
+  transform:scale(1.08);
+}
+/* ===== MESSAGE ROW ===== */
+.msg-row{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+
+.msg-row.user{
+  justify-content:flex-end;
+}
+
+.msg-row.bot{
+  justify-content:flex-start;
+}
+
+/* ===== AVATAR ===== */
+.avatar{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  font-size:14px;
+  flex-shrink:0;
+}
+
+/* ===== TYPING ===== */
+.typing{
+  display:flex;
+  gap:4px;
+  padding:10px 14px;
+  background:rgba(255,255,255,0.08);
+  border-radius:14px;
+}
+
+.typing span{
+  width:6px;
+  height:6px;
+  background:#38bdf8;
+  border-radius:50%;
+  animation:blink 1.4s infinite;
+}
+
+.typing span:nth-child(2){
+  animation-delay:0.2s;
+}
+.typing span:nth-child(3){
+  animation-delay:0.4s;
+}
+
+@keyframes blink{
+  0%,80%,100%{opacity:0;}
+  40%{opacity:1;}
+}
+.chatbox:hover{
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.7),
+    0 0 20px rgba(56,189,248,0.3);
+}
+/* ===== BỔ SUNG CHO CHAT PRODUCTS (CARDS) ===== */
+.chat-products {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.chat-product {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chat-product:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chat-product img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  object-fit: contain;
+  /* Hiệu ứng đổ bóng cho ảnh sản phẩm giống hình 5 */
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.chat-product .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.chat-product .price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #facc15; /* Màu vàng thương hiệu như trong hình 5, 6 */
+  margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ===== TỐI ƯU NÚT MUA TRONG CHAT ===== */
+/* ===== ĐỒNG BỘ NÚT MUA VỚI MÀU CHỦ ĐẠO WEB ===== */
+.chat-product button {
+  width: 100%;
+  /* Sử dụng dải màu gradient đồng bộ với chat-toggle và chat-header */
+  background: linear-gradient(135deg, #38bdf8, #6366f1) !important; 
+  padding: 10px !important;
+  border: none !important;
+  border-radius: 12px !important; /* Bo góc đồng bộ với ô input */
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.chat-product button:hover {
+  /* Hiệu ứng sáng lên và nhấc nhẹ khi rê chuột */
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.chat-product button:active {
+  transform: scale(0.95);
+}
+
+
+/* ===== HIỆU ỨNG TIN NHẮN ĐANG NHẬP (TYPING) ===== */
+.typing {
+  border-bottom-left-radius: 2px !important;
+}
+
+/* ===== ĐIỀU CHỈNH ĐỘ TRONG SUỐT HEADER ===== */
+.chat-header {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

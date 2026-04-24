@@ -1,0 +1,182 @@
+/* ===== FOOTER ===== */
+.footer{
+  margin-top:80px;
+  padding:50px 30px;
+
+  background: linear-gradient(135deg,#020617,#0f172a);
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* glow nền nhẹ */
+.footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 20%, rgba(56,189,248,0.15), transparent);
+  opacity:0.6;
+}
+
+/* hover nhẹ toàn footer */
+.footer:hover{
+  box-shadow:0 0 60px rgba(56,189,248,0.25);
+}
+
+
+/* ===== GRID ===== */
+.footer-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:30px;
+  position:relative;
+  z-index:1;
+}
+
+
+/* ===== COLUMN ===== */
+.footer-col h4{
+  font-size:18px;
+  margin-bottom:15px;
+  color:#38bdf8;
+}
+
+.footer-col p,
+.footer-col a{
+  font-size:14px;
+  color:#cbd5f5;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+  transition:0.25s;
+}
+
+/* hover link */
+.footer-col a:hover{
+  color:#38bdf8;
+  transform:translateX(6px);
+}
+
+
+/* ===== SOCIAL ===== */
+.socials{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+
+.socials span{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:10px;
+  background:rgba(255,255,255,0.05);
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.socials span:hover{
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  transform:scale(1.15);
+  box-shadow:0 0 15px rgba(56,189,248,0.6);
+}
+
+
+/* ===== BOTTOM ===== */
+.footer-bottom{
+  margin-top:40px;
+  padding-top:15px;
+  text-align:center;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:13px;
+  color:#94a3b8;
+}
+
+
+/* ===== ANIMATION ===== */
+.footer-col{
+  animation:fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+/* ===== CSS CHO LOGO TẬP ĐOÀN & THANH TOÁN ===== */
+/* Container chung cho website tập đoàn */
+.footer-logos {
+  display: grid; /* Dùng Grid để chia cột cho đều tăm tắp */
+  grid-template-columns: repeat(2, 140px); /* Chia làm 2 cột, mỗi cột rộng 140px */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-logos a {
+  display: block;
+  height: 40px; /* Chiều cao cố định cho khung chứa */
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.footer-logos img {
+  width: 100%;  /* Ép ảnh rộng hết khung */
+  height: 100%; /* Ép ảnh cao hết khung */
+  object-fit: cover; /* Quan trọng: Nó sẽ lấp đầy khung và cắt bớt phần thừa của ảnh */
+  transition: 0.3s;
+}
+
+/* Riêng phần thanh toán - nằm ngang trên 1 dòng */
+.payment-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.payment-logos img {
+  height: 18px; /* Logo thanh toán nên nhỏ lại để tinh tế hơn */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hover hiệu ứng cho chuyên nghiệp */
+.footer-logos img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.footer-social {
+  display: flex !important; /* Ép kiểu flexbox */
+  flex-direction: row !important; /* Ép nằm hàng ngang */
+  gap: 15px; /* Khoảng cách giữa các icon */
+  margin-top: 20px;
+  align-items: center;
+}
+
+.footer-social a {
+  display: inline-flex;
+  font-size: 22px; /* Chỉnh icon to rõ hơn */
+  color: #cbd5f5;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px);
+  color: #38bdf8; /* Đổi màu xanh khi hover cho đồng bộ */
+}

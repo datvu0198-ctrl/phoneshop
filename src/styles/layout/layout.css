@@ -1,0 +1,376 @@
+/* ===================== ROOT ===================== */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --primary: #3b82f6;
+  --secondary: #2563eb;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+/* ===================== GLOBAL ===================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #f1f5f9;
+
+  background: linear-gradient(
+    270deg,
+    #0f172a,
+    #1e3a8a,
+    #2563eb,
+    #0f172a
+  );
+
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  margin: 15px auto;
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 20px;
+  border-radius: 16px;
+
+  /* glass effect */
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition: 0.3s;
+}
+
+.navbar:hover {
+  transform: translateY(-2px);
+}
+
+/* logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* menu */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar.scrolled {
+  background: rgba(15,23,42,0.9);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* search box */
+.search-box {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  transition: 0.3s;
+}
+
+.search-box:focus {
+  background: rgba(255,255,255,0.1);
+}
+
+/* button */
+.btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== CARD ===================== */
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===================== GRID ===================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===================== ANIMATION ===================== */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .layout-container {
+    padding: 20px;
+  }
+}
+/* ===== NAV CENTER ===== */
+.nav-center {
+  flex: 1;
+  text-align: center;
+}
+
+.about-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  color: white;
+}
+
+/* ===== SEARCH ===== */
+.search {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+/* ===== CART ===== */
+.cart-btn {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ===== USER ===== */
+.user-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-name {
+  color: white;
+}
+
+/* dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 150px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-menu div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-menu div:hover {
+  background: #334155;
+  border-radius: 6px;
+}
+
+/* ===== AUTH BUTTON ===== */
+.btn-nav {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: transparent;
+  color: white;
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+
+/* ===== GRID ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===== FEATURE ===== */
+.featured {
+  margin-top: 40px;
+}
+
+.btn,
+.register-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after,
+.register-btn::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.btn:hover::after,
+.register-btn:hover::after {
+  opacity: 1;
+}
+/* ===== BANNER ===== */
+.banner {
+  margin-top: 10px;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 500px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.banner:hover img {
+  transform: scale(1.05);
+}
+/* ===== NEW PRODUCTS (SWIPER) ===== */
+.new-products {
+  max-width: 1200px;   /* giống featured */
+  margin: 0 auto;      /* căn giữa */
+  padding: 0 10px;     /* tránh sát mép */
+}
+
+/* ép swiper full chiều ngang */
+.new-products .swiper {
+  width: 100%;
+}
+
+/* căn giữa từng card */
+.new-products .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: #3b82f6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6;
+}

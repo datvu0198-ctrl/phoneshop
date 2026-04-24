@@ -1,0 +1,632 @@
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  position: relative;
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.35s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-12px); /* Bay cao hơn một chút */
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== CATEGORY FILTER ===== */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: 14px;
+  color: #cbd5f5;
+
+  background: rgba(255,255,255,0.05);
+  transition: 0.25s;
+}
+
+.category:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.category.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+}
+
+.section-title {
+  display: flex; 
+  width: fit-content;
+  margin: 40px auto 25px; /* Tăng khoảng cách để giao diện "thở" hơn */
+  padding: 10px 28px;
+
+  /* Gradient mượt hơn */
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  border-radius: 999px;
+
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase; /* Viết hoa để tạo điểm nhấn */
+  letter-spacing: 1px;
+  color: white;
+
+  /* Đổ bóng có chiều sâu */
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-title:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.5);
+  filter: brightness(1.1);
+}
+.section-title {
+  width: fit-content;
+}
+.featured {
+  text-align: center;   /* 🔥 cái này mới là chìa khóa */
+}
+.new-products {
+  background: rgba(30, 41, 59, 0.5); /* Nền tối nhẹ để làm nổi card */
+  padding: 30px 20px 50px;
+  border-radius: 24px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ nếu nền có màu */
+}
+/* ===== IMAGE ===== */
+.img-wrap {
+  background: #0f172a;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  transition: 0.4s;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== HEART ===== */
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.heart.active {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); }
+  100% { transform: scale(1.2); }
+}
+
+/* ===== NAME ===== */
+.phone-name {
+  font-size: 15px;
+  margin: 10px 0 5px;
+  min-height: 38px;
+  color: #e2e8f0;
+}
+
+/* ===== PRICE ===== */
+.price {
+  color: #22c55e;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* ===== RATING ===== */
+.rating {
+  font-size: 13px;
+  color: #facc15;
+  margin-bottom: 8px;
+}
+
+/* ===== BUTTON GROUP ===== */
+.btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ===== BUTTON BASE ===== */
+.btn {
+  flex: 1;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s;
+
+  white-space: nowrap;
+}
+
+/* ===== BUY BUTTON ===== */
+.buy-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 500;
+}
+
+.buy-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(59,130,246,0.4);
+}
+
+/* ===== CLICK EFFECT ===== */
+.buy-btn.added {
+  animation: addedEffect 0.4s ease;
+}
+
+@keyframes addedEffect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ===== INFO BUTTON ===== */
+.info-btn {
+  background: rgba(255,255,255,0.08);
+  color: #93c5fd;
+  border: 1px solid rgba(147,197,253,0.4);
+}
+
+.info-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* ===== GRID ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===== FADE ANIMATION ===== */
+.fade-up {
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HOVER LIGHT ===== */
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(56,189,248,0.2),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+.product-detail {
+    color: #ffffff !important;
+}
+
+.product-detail .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important; /* Biến các chữ mờ thành trắng mờ */
+}
+
+.product-detail h2, .product-detail h3, .product-detail h4 {
+    color: #ffffff;
+}
+
+.fpt-card {
+  background: linear-gradient(145deg, #1e3a8a, #1e40af);
+  border-radius: 20px;
+  padding: 20px;
+  position: sticky;
+  top: 100px;
+  border: 1px solid rgba(59,130,246,0.3);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.4),
+    inset 0 0 20px rgba(59,130,246,0.2);
+
+  transition: 0.3s;
+}
+
+.fpt-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    inset 0 0 30px rgba(59,130,246,0.3);
+}
+/* MAIN BOX */
+.fpt-media-box {
+  width: 100%;
+  height: 420px;
+  background: #f8fafc;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.fpt-main-img {
+  max-width: 85%;
+  max-height: 380px;
+  object-fit: contain;
+  transition: 0.3s;
+  cursor: zoom-in;
+}
+
+/* VIDEO */
+.fpt-main-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+}
+
+/* PLAY BUTTON */
+.fpt-play {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.fpt-play:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+/* THUMB BAR */
+.fpt-thumb-bar {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.fpt-thumb-bar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.fpt-thumb-bar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* THUMB */
+.fpt-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+
+  border: 2px solid transparent;
+  transition: 0.25s;
+  background: #fff;
+}
+
+/* ACTIVE */
+.fpt-thumb.active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* VIDEO THUMB */
+.fpt-thumb.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+}
+.fpt-left {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+}
+/* ===== CARD GLASS ===== */
+.fpt-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== MAIN MEDIA ===== */
+.fpt-main {
+  position: relative;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0b1a3a;
+
+  --x: 50%;
+  --y: 50%;
+}
+
+/* ===== IMAGE ZOOM ===== */
+.fpt-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+}
+
+.fpt-main:hover .fpt-img {
+  transform: scale(1.6);
+  transform-origin: var(--x) var(--y);
+}
+
+/* ===== VIDEO ===== */
+.fpt-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== PLAY BUTTON ===== */
+.fpt-play {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fpt-play:hover {
+  background: #0d6efd;
+  transform: scale(1.1);
+}
+
+/* ===== THUMB SLIDER ===== */
+.fpt-thumb-slider {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.fpt-thumb-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.fpt-thumb-slider::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+/* ===== THUMB ITEM ===== */
+.fpt-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: 0.25s;
+}
+
+.fpt-thumb:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.fpt-thumb.active {
+  border: 2px solid #0d6efd;
+  opacity: 1;
+}
+
+/* VIDEO THUMB */
+.fpt-thumb.video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: white;
+  font-size: 22px;
+}
+
+/* ===== GLOW EFFECT ===== */
+.fpt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59,130,246,0.2),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.fpt-card:hover::before {
+  opacity: 1;
+}
+.fpt-info {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.fpt-info h2 {
+  font-weight: 600;
+}
+
+.fpt-right-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.fpt-right-card h4 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.fpt-right-card p {
+  color: #ddd;
+}
+.btn-primary {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+}
+.price {
+  color: #ff8a00 !important;
+  font-weight: 700;
+  font-size: 26px;
+}
+.discount-badge {
+  display: inline-block;
+  background: #ff3d00;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.stock {
+  color: #00e676;
+  font-size: 14px;
+}
+.desc {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.desc p {
+  margin-bottom: 10px;
+}
+
+.desc-title {
+  color: #fff;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.desc li {
+  margin-left: 20px;
+  margin-bottom: 6px;
+  list-style: disc;
+}
+.right-scroll {
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.right-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+.back-home-btn {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.back-home-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  transform: translateX(-3px);
+}

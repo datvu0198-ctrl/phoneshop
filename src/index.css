@@ -1,0 +1,24 @@
+/* ================= RESET ================= */
+@import "./styles/base/reset.css";
+
+/* ================= GLOBAL ================= */
+@import "./styles/base/global.css";
+
+/* ================= LAYOUT ================= */
+@import "./styles/layout/layout.css";
+@import "./styles/layout/footer.css";
+
+/* ================= COMPONENTS ================= */
+@import "./styles/components/navbar.css";
+@import "./styles/components/buttons.css";
+@import "./styles/components/card.css";
+@import "./styles/components/chatbox.css";
+
+/* ================= PAGES ================= */
+@import "./styles/pages/product.css";
+@import "./styles/pages/cart.css";
+@import "./styles/pages/profile.css";
+@import "./styles/pages/admin.css";
+
+/* ================= RESPONSIVE ================= */
+@import "./styles/responsive.css";
